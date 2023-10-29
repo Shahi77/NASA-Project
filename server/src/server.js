@@ -4,11 +4,8 @@ const { app } = require("./app");
 
 const { loadPlanetsData } = require("./models/planets.model");
 
-//dotenv.config({ path: "./config.env" });
 require("dotenv").config();
 const { DATABASE } = process.env;
-//const MONGO_URL = process.env.DATABASE;
-// console.log(process.env.DATABASE);
 
 const PORT = process.env.PORT || 8000;
 
