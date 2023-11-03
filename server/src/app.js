@@ -1,10 +1,9 @@
 const express = require("express");
 const cors = require("cors");
 const path = require("path");
-const planetsRouter = require("./routes/planets/planets.router");
-const launchesRouter = require("./routes/launches/launches.router");
-
 const app = express();
+
+const v1 = require("./routes/version1");
 
 // Cross Origin Communication
 app.use(
@@ -12,12 +11,10 @@ app.use(
     origin: "http://localhost:3000",
   })
 );
-
 app.use(express.json());
 app.use(express.static(path.join(__dirname, "..", "public"))); //middleware to serve frontend
 
-app.use("/planets", planetsRouter);
-app.use("/launches", launchesRouter);
+app.use("/v1", v1); //v1 api call
 
 app.get("/*", (req, res) => {
   res.sendFile(path.join(__dirname, "..", "public", "index.html"));
