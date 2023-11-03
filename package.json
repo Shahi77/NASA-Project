@@ -16,6 +16,9 @@
   },
   "author": "",
   "license": "ISC",
+  "jest": {
+  "testEnvironment":"node"
+  },
   "devDependencies": {
     "concurrently": "^8.2.2"
   }
