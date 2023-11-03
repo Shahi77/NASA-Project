@@ -32,7 +32,9 @@ async function getLatestFlightNumber() {
 }
 
 async function getAllLaunches() {
-  return await launchesDatabase.find({}, { _id: 0, __v: 0 });
+  const result = await launchesDatabase.find({}, { _id: 0, __v: 0 });
+  console.log(`db result: ${result}`);
+  return result;
 }
 
 async function saveLaunch(launch) {
@@ -87,6 +89,7 @@ async function abortLaunchById(launchId) {
 
 module.exports = {
   existsLaunchWithId,
+
   getAllLaunches,
   scheduleNewLaunch,
   abortLaunchById,

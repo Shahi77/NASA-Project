@@ -6,7 +6,8 @@ const {
 } = require("../../models/launches.model");
 
 async function httpGetAllLaunches(req, res) {
-  return await res.status(200).json(getAllLaunches());
+  const result = await getAllLaunches();
+  return res.status(200).json(result);
 }
 
 async function httpAddNewLaunch(req, res) {
