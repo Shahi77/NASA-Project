@@ -9,7 +9,7 @@ describe("Launches API", () => {
   describe("Test GET /launches", () => {
     test("It should respond with 200 success", async () => {
       const response = await request(app)
-        .get("/launches")
+        .get("/v1/launches")
         .expect("Content-Type", /json/)
         .expect(200);
     });
@@ -19,26 +19,26 @@ describe("Launches API", () => {
     const completeLaunchData = {
       mission: "test-mission",
       rocket: "test-rocket",
-      target: "test-target",
+      target: "Kepler-442 b",
       launchDate: "December 20, 2023",
     };
 
     const launchDataWithoutDate = {
       mission: "test-mission",
       rocket: "test-rocket",
-      target: "test-target",
+      target: "Kepler-442 b",
     };
 
     const launchDateWithInvalidDate = {
       mission: "test-mission",
       rocket: "test-rocket",
-      target: "test-target",
+      target: "Kepler-442 b",
       launchDate: "test-date",
     };
 
     test("It should respond with 201 success", async () => {
       const response = await request(app)
-        .post("/launches")
+        .post("/v1/launches")
         .send(completeLaunchData)
         .expect("Content-Type", /json/)
         .expect(201);
@@ -52,7 +52,7 @@ describe("Launches API", () => {
 
     test("It should catch missing required properties", async () => {
       const response = await request(app)
-        .post("/launches")
+        .post("/v1/launches")
         .send(launchDataWithoutDate)
         .expect("Content-Type", /json/)
         .expect(400);
@@ -64,7 +64,7 @@ describe("Launches API", () => {
 
     test("It should catch invalid dates", async () => {
       const response = await request(app)
-        .post("/launches")
+        .post("/v1/launches")
         .send(launchDateWithInvalidDate)
         .expect("Content-Type", /json/)
         .expect(400);
