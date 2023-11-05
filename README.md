@@ -4,7 +4,8 @@ Web project built with MERN. It lets the user schedule and manage rocket launche
 
 
 ## Project Architecture
-![project-architecture](https://github.com/Shahi77/NASA-Project/assets/100700808/fcfd0522-38a6-4df2-9976-f2ddf06a9689)
+![Nasa-Project Architecture](https://github.com/Shahi77/NASA-Project/assets/100700808/885c118d-f3c9-4925-a861-e2c6b09fb66b)
+
 
 ## Run Locally
 
