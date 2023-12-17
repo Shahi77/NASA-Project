@@ -95,8 +95,11 @@ async function getLatestFlightNumber() {
   }
 }
 
-async function getAllLaunches() {
-  const result = await launchesDatabase.find({}, { _id: 0, __v: 0 });
+async function getAllLaunches(skip, limit) {
+  const result = await launchesDatabase
+    .find({}, { _id: 0, __v: 0 })
+    .skip(skip)
+    .limit(limit);
   console.log(`db result: ${result}`);
   return result;
 }
