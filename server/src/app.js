@@ -15,7 +15,7 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, "..", "public"))); //middleware to serve frontend
 
 app.use(morgan("combined"));
-app.use("v1", api); //v1 api call
+app.use("/v1", api); //v1 api call
 
 app.get("/*", (req, res) => {
   res.sendFile(path.join(__dirname, "..", "public", "index.html"));

@@ -21,7 +21,7 @@ function loadPlanetsData() {
       "..",
       "..",
       "data",
-      "kepler_data.csv"
+      "Kepler_data.csv"
     );
     fs.createReadStream(pathToFile)
       .pipe(
