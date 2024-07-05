@@ -1,6 +1,6 @@
 
 # NASA-Dashboard
-Web project built with MERN. It lets the user schedule and manage rocket launches to potential habitable planets discovered by Kepler Telescope extracted from NASA Exoplanet Archive as well as maintain past launches history including launches by SpaceX since 2006 fetched using spacex API.
+Web project built with MERN. It lets the user schedule and manage rocket launches to potential habitable planets discovered by Kepler Telescope extracted from NASA Exoplanet Archive as well as maintain past launches history including launches by SpaceX since 2006 fetched using spacex API. It is developed with Node.js, Express, and MongoDB, and deployed using Docker on an AWS EC2 instance.
 
 
 ## Project Architecture
